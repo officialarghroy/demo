@@ -1,5 +1,35 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Phone, MapPin, Clock, X, Menu, Star as StarIc, Users, Check, MessageCircle, ChevronLeft, ChevronRight, Flame } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>URUK Restaurant | Iraqi &amp; Mesopotamian Fine Dining, Manama</title>
+<meta name="description" content="Uruk Restaurant, Exhibitions Ave, Manama, Bahrain. Authentic Iraqi charcoal grills, masgouf and quzi. Open daily 12 PM to 1 AM. +973 1729 1500">
+<style>html{scroll-behavior:smooth}body{margin:0;background:#070605}</style>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const {useState,useEffect,useRef}=React;
+const IC={
+Phone:'<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+MapPin:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+Clock:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+X:'<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+Menu:'<path d="M4 12h16"/><path d="M4 6h16"/><path d="M4 18h16"/>',
+Star:'<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>',
+Users:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+Check:'<path d="M20 6 9 17l-5-5"/>',
+MessageCircle:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+ChevronLeft:'<path d="m15 18-6-6 6-6"/>',
+ChevronRight:'<path d="m9 18 6-6-6-6"/>',
+Flame:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>'
+};
+const mk=(n)=>({size=24,color="currentColor",fill="none"})=><svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" dangerouslySetInnerHTML={{__html:IC[n]}}/>;
+const Phone=mk("Phone"),MapPin=mk("MapPin"),Clock=mk("Clock"),X=mk("X"),Menu=mk("Menu"),StarIc=mk("Star"),Users=mk("Users"),Check=mk("Check"),MessageCircle=mk("MessageCircle"),ChevronLeft=mk("ChevronLeft"),ChevronRight=mk("ChevronRight"),Flame=mk("Flame");
 
 const G = "#C99E5A", G2 = "#E5C185";
 const U = (id, w = 1400) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
@@ -293,7 +323,7 @@ const Drawer = ({ o, seat, close }) => {
   );
 };
 
-export default function App() {
+function App() {
   const [ph, setPh] = useState(0), [sy, setSy] = useState(0), [mob, setMob] = useState(false), [nc, setNc] = useState(false);
   const [res, setRes] = useState({ o: false, seat: "Main Dining Hall" });
   const [tab, setTab] = useState(0), [ac, setAc] = useState(0), [sp, setSp] = useState(0), [rv, setRv] = useState(0), [open, setOpen] = useState(isOpen());
@@ -451,3 +481,8 @@ export default function App() {
     </div>
   );
 }
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
